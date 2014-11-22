@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 
 import net.slashie.libjcsi.ConsoleSystemInterface;
 import net.slashie.libjcsi.wswing.WSwingConsoleInterface;
+import net.slashie.util.Position;
 
 import com.zarkoix.ascfiighter.levelHandler.Level;
 import com.zarkoix.ascfiighter.levelHandler.levelLoad;
@@ -22,12 +23,24 @@ public class Main extends JFrame{
     public static void Mains() throws IOException{
     	console = new WSwingConsoleInterface("Ascii Fight", false);
     }
+    public static int consoleHight(){
+    	boolean returninf = false;
+    	for(int y = 0; y < 100; y++){
+    		Position pos = new Position(1, y);
+    		returninf = console.isInsideBounds(pos);
+    		if(returninf == false){
+    			return y - 1;
+    			
+    		}
+    	}
+		return 0;
+    	
+    }
  
     public static void main(String[] args) throws IOException {
         Mains();
-        
         console.cls();
-        Level lev = levelWrite.levelForm(levelLoad.getLevel("/Users/coldrock/Desktop/ASCfIIghter/ASCfIIghter/AsciiFighter/lvl.txt"));
+        Level lev = levelWrite.levelForm(levelLoad.getLevel("/Users/coldrock/git/AsciiFighter/lvl.txt"));
        levelWrite.levelDraw(console, lev);
         
     }
@@ -36,5 +49,8 @@ public class Main extends JFrame{
     public void repaint(){
         super.repaint();
         console.refresh();
+    }
+    public static void sendmsg(String msg){
+    	System.out.println(msg);
     }
 }

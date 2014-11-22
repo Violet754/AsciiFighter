@@ -3,7 +3,7 @@ package com.zarkoix.ascfiighter.levelHandler;
 import com.zarkoix.ascfiighter.tile.Tile;
 
 public class Level {
-	  private Tile[][] level = new Tile[80][24];
+	  private Tile[][] level = new Tile[1000][10000];
 	public Tile getTile(int x, int y){
 		return level[x][y];
 	}
