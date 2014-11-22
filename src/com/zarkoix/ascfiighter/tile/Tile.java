@@ -21,6 +21,9 @@ public class Tile {
 		return retString;
 	}
 	
+	public void steppedOn(){}
+	public void interact(){}
+	
 	public void setVr(char v){
 		vr = v;
 	}
