@@ -2,19 +2,19 @@ package com.zarkoix.ascfiighter.levelHandler;
 
 import java.util.List;
 
+import net.slashie.libjcsi.ConsoleSystemInterface;
+
 import com.zarkoix.ascfiighter.tile.Tile;
 
-import asciiPanel.AsciiPanel;
-
 public class levelWrite {
-	public static void levelDraw(AsciiPanel t, Level l){
+	public static void levelDraw(ConsoleSystemInterface t, Level l){
 		for(int y = 0; y < 24; y++){
 			for(int x =0; x < 80; x++){
 				System.out.println("x: " + x);
 				System.out.println("y: " + y);
 				System.out.println();
 				
-				t.write(l.getTile(x, y).getVr(), x, y);
+				t.print( x, y ,l.getTile(x, y).getVr());
 			}
 		}
 	}
@@ -28,7 +28,7 @@ public class levelWrite {
 			}
 			
 			char[] lineI = lines.get(y).toCharArray();
-			
+			String lineIString = new String(lineI);
 			
 			for(int x = 0; x < lineI.length; x++){
 				

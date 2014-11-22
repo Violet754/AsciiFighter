@@ -9,15 +9,16 @@ public class Tile {
 		meta = m;
 		grav = g;
 	}
-	public Tile(char v){
-		vr = v;
+	public Tile(char lineI){
+		vr = lineI;
 	}
 	private char vr; //visual repersentation
 	@Getter @Setter private int meta; //meta data
 	@Getter @Setter private boolean grav; //gravity?
 	
-	public char getVr(){
-		return vr;
+	public String getVr(){
+		String retString = String.valueOf(vr);
+		return retString;
 	}
 	
 	public void setVr(char v){
