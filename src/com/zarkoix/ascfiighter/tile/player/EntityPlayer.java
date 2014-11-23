@@ -30,44 +30,45 @@ public class EntityPlayer extends Entity {
 	public static char v = "@".charAt(0);
 	public static ArrayList<String> turns = new ArrayList<String>();
 	
-	public static void controls(int up,int down,int left,int right){
+	public static void controls(){
 		
 		CharKey dir = Main.console.inkey();
-		if(dir.code == up&& (y - 1 >= 0)){
+		switch(dir.code){
+		case CharKey.w:
 			if(turns.size() !=4){
-			turns.add("w");
-			Main.console.print(x, y, " ");
-			y--;
+				turns.add("w");
+				Main.console.print(x, y, " ");
+				y--;
 			}
-		}
-		if(dir.code == down&& (y+1 < 25)){
+			break;
+		case CharKey.s:
 			if(turns.size() !=4){
-			turns.add("s");
-			Main.console.print(x, y, " ");
-			y++;
-			}
-		}
-		if(dir.code == left&& (x-1 >= 0)){
+				turns.add("s");
+				Main.console.print(x, y, " ");
+				y++;
+				}
+			break;
+		case CharKey.a:
 			if(turns.size() !=4){
-			turns.add("a");
-			Main.console.print(x, y, " ");
-			x--;
-			}
-		}
-		if(dir.code == right && (x+1 < 80)){
+				turns.add("a");
+				Main.console.print(x, y, " ");
+				x--;
+				}
+			break;
+		case CharKey.d:
 			if(turns.size() != 4){
-			turns.add("d");
-			Main.console.print(x, y, " ");
-			x++;
-			}
-		}
-		if(dir.code == CharKey.f){
+				turns.add("d");
+				Main.console.print(x, y, " ");
+				x++;
+				}
+			break;
+		case CharKey.f:
 			System.out.println("Current turns list: " + turns.toString());
-		}
-		if(dir.code == CharKey.SPACE){
-			
+			break;
+		case CharKey.SPACE:
 			turns = new ArrayList<String>();
 			TickHandler.turnactive = false;
+			break;
 		}
 		
 	}

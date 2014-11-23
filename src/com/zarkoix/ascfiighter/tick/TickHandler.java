@@ -53,7 +53,7 @@ public class TickHandler {
 		
 		Main.console.print(player1.x, player1.y, player1.getVr(),Main.console.WHITE);
 		Main.console.refresh();
-		EntityPlayer.controls(CharKey.w,CharKey.s,CharKey.a,CharKey.d);
+		EntityPlayer.controls();
 	}
 	
 	
