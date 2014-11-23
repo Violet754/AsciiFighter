@@ -13,6 +13,7 @@ import net.slashie.util.Position;
 import com.zarkoix.ascfiighter.levelHandler.Level;
 import com.zarkoix.ascfiighter.levelHandler.levelLoad;
 import com.zarkoix.ascfiighter.levelHandler.levelWrite;
+import com.zarkoix.ascfiighter.tick.TickHandler;
 
 public class Main extends JFrame{
 	public static ConsoleSystemInterface console = null;
@@ -23,25 +24,13 @@ public class Main extends JFrame{
     public static void Mains() throws IOException{
     	console = new WSwingConsoleInterface("Ascii Fight", false);
     }
-    public static int consoleHight(){
-    	boolean returninf = false;
-    	for(int y = 0; y < 100; y++){
-    		Position pos = new Position(1, y);
-    		returninf = console.isInsideBounds(pos);
-    		if(returninf == false){
-    			return y - 1;
-    			
-    		}
-    	}
-		return 0;
-    	
-    }
  
     public static void main(String[] args) throws IOException {
         Mains();
         console.cls();
-        Level lev = levelWrite.levelForm(levelLoad.getLevel("/Users/coldrock/git/AsciiFighter/lvl.txt"));
+        Level lev = levelWrite.levelForm(levelLoad.getLevel("LevelMain.txt"));
        levelWrite.levelDraw(console, lev);
+       TickHandler.initTicks(0);
         
     }
     
