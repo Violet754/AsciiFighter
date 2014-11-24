@@ -6,7 +6,7 @@ import com.zarkoix.ascfiighter.tick.TickHandler;
 public class LevelTick extends Thread{
 	public static boolean LocationStore = false;
 	public void run(){
-		TickHandler.player1.setplayerloc();;
+		TickHandler.player1.setplayerloc();
 		while(TickHandler.lvtkrun){
 			if(TickHandler.turnactive == false){
 			TickHandler.EndTurn();
