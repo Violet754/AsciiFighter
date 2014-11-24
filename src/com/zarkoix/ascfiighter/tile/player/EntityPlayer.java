@@ -72,7 +72,7 @@ public class EntityPlayer extends Entity {
 		}
 		
 	}
-	public static void setplayerloc(){
+	public void setplayerloc(){
 		yprev = y;
 		xprev = x;
 		
