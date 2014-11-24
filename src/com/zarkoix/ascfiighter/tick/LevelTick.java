@@ -9,9 +9,8 @@ public class LevelTick extends Thread{
 		TickHandler.player1.setplayerloc();
 		while(TickHandler.lvtkrun){
 			if(TickHandler.turnactive == false){
-			TickHandler.EndTurn();
-			TickHandler.turnactive = true;
-			
+				TickHandler.EndTurn();
+				TickHandler.turnactive = true;
 			}else{
 				if(LocationStore == false){
 					EntityPlayer.setplayerloc();
