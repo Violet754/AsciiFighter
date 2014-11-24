@@ -34,23 +34,26 @@ public class TickHandler {
 		Main.console.print(player1.x, player1.y, player1.getVr(),Main.console.WHITE);
 		while(player1.turns.size() == 4){
 			String direction = player1.turns.get(inq);
-			if(direction == "w"){
-				player1.y = player1.y - (short)1;
-				player1.turns.remove(direction);
-			}
-			if(direction == "s"){
-				player1.y = player1.y + (short)1;
-				player1.turns.remove(direction);
-			}
-			if(direction == "a"){
-				player1.x = player1.x - (short)1;
-				player1.turns.remove(direction);
-			}
-			if(direction == "d"){
-				player1.x = player1.x + (short)1;
-				player1.turns.remove(direction);
-			}
+			switch(direction){
+				case "w":
+					player1.y = player1.y - (short)1;
+					player1.turns.remove(direction);
+					break;
+				case "s":
+					player1.y = player1.y + (short)1;
+					player1.turns.remove(direction);
+					break;
+				case "a":
+					player1.x = player1.x - (short)1;
+					player1.turns.remove(direction);
+					break;
 			
+				case "d":
+					player1.x = player1.x + (short)1;
+					player1.turns.remove(direction);
+					break;
+			
+			}
 		}
 		
 		
