@@ -9,8 +9,8 @@ import com.zarkoix.ascfiighter.tile.Tile;
 
 public class levelWrite {
 	public static void levelDraw(ConsoleSystemInterface t, Level l){
-		for(int y = 0; y < 24; y++){
-			for(int x =0; x < 80; x++){
+		for(int y = 0; y < 1000; y++){
+			for(int x =0; x < 1000; x++){
 				
 				if(l.getTile(x, y) != null){
 				t.print( x, y ,l.getTile(x, y).getVr());

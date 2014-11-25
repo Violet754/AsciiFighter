@@ -11,8 +11,11 @@ public class TickHandler {
 	//replay array list
 	private static ArrayList<String> replay = new ArrayList<String>();
 	private static LevelTick lvtk = new LevelTick();
+	private static MainMenu MainMenuTick = new MainMenu();
 	//is LevelTick is running?
 	public static boolean lvtkrun = false;
+	//is MainMenuRunning?
+	public static boolean MainMenurun = false;
 	//is a Turn Active?
 	public static boolean turnactive = true;
 	//what char to start at in CharArray in Player1
@@ -26,6 +29,10 @@ public class TickHandler {
 		if(initlevel == 0){
 			lvtkrun = true;
 			lvtk.start();
+			
+		}else if(initlevel == 1){
+			MainMenurun = true;
+			MainMenuTick.start();
 			
 		}
 		
