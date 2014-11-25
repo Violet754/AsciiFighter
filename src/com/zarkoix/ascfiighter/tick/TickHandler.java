@@ -24,14 +24,15 @@ public class TickHandler {
 	public static EntityPlayer player1 = new EntityPlayer(EntityPlayer.v,(short)0 ,true, (short)5, (short)0, (short)5,(short)5,(short)5,10,10);
 	//called by main class to init testing of ticks
 	public static void initTicks(int initlevel){
-		if(initlevel == 0){
+		switch(initlevel){
+		case 0:
 			lvtkrun = true;
 			lvtk.start();
-			
-		}else if(initlevel == 1){
+			break;
+		case 1:
 			MainMenurun = true;
 			MainMenuTick.start();
-			
+			break;
 		}
 		
 		
