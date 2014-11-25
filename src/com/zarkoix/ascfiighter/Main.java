@@ -1,15 +1,9 @@
 package com.zarkoix.ascfiighter;
 
 import java.io.IOException;
-import java.io.InputStream;
-
 import javax.swing.JFrame;
-import javax.swing.JTextField;
-
 import net.slashie.libjcsi.ConsoleSystemInterface;
 import net.slashie.libjcsi.wswing.WSwingConsoleInterface;
-import net.slashie.util.Position;
-
 import com.zarkoix.ascfiighter.levelHandler.Level;
 import com.zarkoix.ascfiighter.levelHandler.levelLoad;
 import com.zarkoix.ascfiighter.levelHandler.levelWrite;

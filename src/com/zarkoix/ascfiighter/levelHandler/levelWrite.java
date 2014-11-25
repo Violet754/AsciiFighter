@@ -4,9 +4,8 @@ import java.util.List;
 
 import net.slashie.libjcsi.ConsoleSystemInterface;
 
-import com.zarkoix.ascfiighter.Main;
-import com.zarkoix.ascfiighter.tick.TickHandler;
 import com.zarkoix.ascfiighter.tile.Tile;
+import com.zarkoix.ascfiighter.tile.player.EntityPlayer;
 
 public class levelWrite {
 	public static void levelDraw(ConsoleSystemInterface t, Level l){
@@ -27,12 +26,11 @@ public class levelWrite {
 			
 			
 			char[] lineI = lines.get(y).toCharArray();
-			String lineIString = new String(lineI);
 			
 			for(int x = 0; x < lineI.length; x++){
 				if(lineI[x] == "@".charAt(0)){
-					TickHandler.player1.x = x;
-					TickHandler.player1.y = y;
+					EntityPlayer.x = x;
+					EntityPlayer.y = y;
 					
 				}else{
 				ret.setTile(x, y, new Tile(lineI[x]));

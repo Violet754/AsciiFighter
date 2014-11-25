@@ -1,6 +1,5 @@
 package com.zarkoix.ascfiighter.tick;
 
-import com.zarkoix.ascfiighter.tile.player.EntityPlayer;
 import com.zarkoix.ascfiighter.tick.TickHandler;
 
 public class LevelTick extends Thread{

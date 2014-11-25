@@ -2,7 +2,7 @@ package com.zarkoix.ascfiighter.tick;
 
 import java.util.ArrayList;
 
-import net.slashie.libjcsi.CharKey;
+import net.slashie.libjcsi.ConsoleSystemInterface;
 
 import com.zarkoix.ascfiighter.Main;
 import com.zarkoix.ascfiighter.tile.player.EntityPlayer;
@@ -39,50 +39,46 @@ public class TickHandler {
 	//Called at end of a turn in LevelTick
 	public static void EndTurn(){
 		LevelTick.LocationStore = false;
-		inq = player1.turns.size() - 1;
-		Main.console.print(player1.x, player1.y, " ");
-		player1.x = player1.xprev;
-		player1.y = player1.yprev;
-		while(player1.turns.isEmpty() == false){
-			String direction = player1.turns.get(inq);
+		inq = EntityPlayer.turns.size() - 1;
+		Main.console.print(EntityPlayer.x, EntityPlayer.y, " ");
+		EntityPlayer.x = EntityPlayer.xprev;
+		EntityPlayer.y = EntityPlayer.yprev;
+		while(EntityPlayer.turns.isEmpty() == false){
+			String direction = EntityPlayer.turns.get(inq);
 			switch(direction){
 				case "w":
-					player1.y = player1.y - (short)1;
-					player1.turns.remove(inq);
+					EntityPlayer.y = EntityPlayer.y - (short)1;
+					EntityPlayer.turns.remove(inq);
 					inq--;
 					break;
 				case "s":
-					player1.y = player1.y + (short)1;
-					player1.turns.remove(inq);
+					EntityPlayer.y = EntityPlayer.y + (short)1;
+					EntityPlayer.turns.remove(inq);
 					inq--;
 					break;
 				case "a":
-					player1.x = player1.x - (short)1;
-					player1.turns.remove(inq);
+					EntityPlayer.x = EntityPlayer.x - (short)1;
+					EntityPlayer.turns.remove(inq);
 					inq--;
 					break;
 				case "d":
-					player1.x = player1.x + (short)1;
-					player1.turns.remove(inq);
+					EntityPlayer.x = EntityPlayer.x + (short)1;
+					EntityPlayer.turns.remove(inq);
 					inq--;
 					break;
 			
 			}
 		}
-		player1.turns.clear();
+		EntityPlayer.turns.clear();
 		
 	}
 	
-	private static void playerprint(int x,int y) {
-		Main.console.print(x, y, "@",Main.console.WHITE);
-		
-	}
 	//Called every tick of a turn in LevelTick
 	public static void Turn() {
 		
-		Main.console.print(player1.x, player1.y, player1.getVr(),Main.console.WHITE);
+		Main.console.print(EntityPlayer.x, EntityPlayer.y, player1.getVr(),ConsoleSystemInterface.WHITE);
 		Main.console.refresh();
-		player1.controls();
+		EntityPlayer.controls();
 	}
 	
 	
