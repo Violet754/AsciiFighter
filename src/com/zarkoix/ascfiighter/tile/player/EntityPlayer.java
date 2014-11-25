@@ -33,6 +33,7 @@ public class EntityPlayer extends Entity {
 	public static void controls(){
 		
 		CharKey dir = Main.console.inkey();
+		if(TickHandler.turnactive){
 		switch(dir.code){
 		case CharKey.w:
 			if(turns.size() !=4){
@@ -66,9 +67,9 @@ public class EntityPlayer extends Entity {
 			System.out.println("Current turns list: " + turns.toString());
 			break;
 		case CharKey.SPACE:
-			turns = new ArrayList<String>();
 			TickHandler.turnactive = false;
 			break;
+		}
 		}
 		
 	}

@@ -16,7 +16,7 @@ public class TickHandler {
 	//is a Turn Active?
 	public static boolean turnactive = true;
 	//what char to start at in CharArray in Player1
-	private static int inq = 0;
+	private static int inq = 3;
 	//replayer char same as inq
 	private static int rinq = 3;
 	//Player Init
@@ -34,42 +34,37 @@ public class TickHandler {
 	//Called at end of a turn in LevelTick
 	public static void EndTurn(){
 		LevelTick.LocationStore = false;
-		inq = player1.turns.size();
+		inq = player1.turns.size() - 1;
 		Main.console.print(player1.x, player1.y, " ");
 		player1.x = player1.xprev;
 		player1.y = player1.yprev;
-		Main.console.print(player1.x, player1.y, player1.getVr(),Main.console.WHITE);
 		while(player1.turns.isEmpty() == false){
 			String direction = player1.turns.get(inq);
 			switch(direction){
 				case "w":
-					player1.y = player1.y + (short)1;
-					playerprint(player1.y,player1.x);
+					player1.y = player1.y - (short)1;
 					player1.turns.remove(inq);
 					inq--;
 					break;
 				case "s":
-					player1.y = player1.y - (short)1;
-					playerprint(player1.y,player1.x);
+					player1.y = player1.y + (short)1;
 					player1.turns.remove(inq);
 					inq--;
 					break;
 				case "a":
-					player1.x = player1.x + (short)1;
-					playerprint(player1.y,player1.x);
+					player1.x = player1.x - (short)1;
 					player1.turns.remove(inq);
 					inq--;
 					break;
-			
 				case "d":
-					player1.x = player1.x - (short)1;
-					playerprint(player1.y,player1.x);
+					player1.x = player1.x + (short)1;
 					player1.turns.remove(inq);
 					inq--;
 					break;
 			
 			}
 		}
+		player1.turns.clear();
 		
 	}
 	
@@ -82,7 +77,7 @@ public class TickHandler {
 		
 		Main.console.print(player1.x, player1.y, player1.getVr(),Main.console.WHITE);
 		Main.console.refresh();
-		EntityPlayer.controls();
+		player1.controls();
 	}
 	
 	
