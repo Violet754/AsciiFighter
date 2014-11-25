@@ -23,8 +23,8 @@ public class EntityPlayer extends Entity {
 	
 	@Getter @Setter private short mana;
 	@Getter @Setter private short mmana;
-	@Getter @Setter public static int x = 10;
-	@Getter @Setter public static int y = 10;
+	@Getter @Setter public static int x ;
+	@Getter @Setter public static int y ;
 	public static int yprev ;
 	public static int xprev ;
 	public static char v = "@".charAt(0);
