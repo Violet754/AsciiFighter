@@ -20,8 +20,6 @@ public class TickHandler {
 	public static boolean turnactive = true;
 	//what char to start at in CharArray in Player1
 	private static int inq = 3;
-	//replayer char same as inq
-	private static int rinq = 3;
 	//Player Init
 	public static EntityPlayer player1 = new EntityPlayer(EntityPlayer.v,(short)0 ,true, (short)5, (short)0, (short)5,(short)5,(short)5,10,10);
 	//called by main class to init testing of ticks
