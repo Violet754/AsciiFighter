@@ -41,25 +41,26 @@ public class TickHandler {
 			String direction = Main.getPlayers()[0].turns.get(inq);
 			switch(direction){
 				case "w":
-					Main.getPlayers()[0].setY(Main.getPlayers()[0].getY() - (short)1);
+					Main.getPlayers()[0].setY(Main.getPlayers()[0].getY() - 1);
 					Main.getPlayers()[0].turns.remove(inq);
 					inq--;
 					break;
 				case "s":
-					Main.getPlayers()[0].setY(Main.getPlayers()[0].getY() + (short)1);
+					Main.getPlayers()[0].setY(Main.getPlayers()[0].getY() + 1);
 					Main.getPlayers()[0].turns.remove(inq);
 					inq--;
 					break;
 				case "a":
-					Main.getPlayers()[0].setX(Main.getPlayers()[0].getX() - (short)1);
+					Main.getPlayers()[0].setX(Main.getPlayers()[0].getX() - 1);
 					Main.getPlayers()[0].turns.remove(inq);
 					inq--;
 					break;
 				case "d":
-					Main.getPlayers()[0].setX(Main.getPlayers()[0].getX() + (short)1);
+					Main.getPlayers()[0].setX(Main.getPlayers()[0].getX() + 1);
 					Main.getPlayers()[0].turns.remove(inq);
 					inq--;
 					break;
+				default: break;
 			
 			}
 		}

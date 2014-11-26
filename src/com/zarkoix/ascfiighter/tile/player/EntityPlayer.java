@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import com.zarkoix.ascfiighter.Main;
+import com.zarkoix.ascfiighter.tick.LevelTick;
+import com.zarkoix.ascfiighter.tick.LocationStore;
 import com.zarkoix.ascfiighter.tick.TickHandler;
 import com.zarkoix.ascfiighter.tile.Entity;
 import com.zarkoix.ascfiighter.tile.player.EntityPlayer;
@@ -37,15 +39,14 @@ public class EntityPlayer extends Entity {
 	public ArrayList<String> turns = new ArrayList<String>();
 	
 	public void controls(){
-		
 		CharKey dir = Main.console.inkey();
-		if(TickHandler.turnactive){
 		switch(dir.code){
 		case CharKey.w:
 			if(turns.size() !=4){
 				turns.add("w");
 				Main.console.print(x, y, " ");
 				y--;
+				break;
 			}
 			break;
 		case CharKey.s:
@@ -53,6 +54,7 @@ public class EntityPlayer extends Entity {
 				turns.add("s");
 				Main.console.print(x, y, " ");
 				y++;
+				break;
 				}
 			break;
 		case CharKey.a:
@@ -60,6 +62,7 @@ public class EntityPlayer extends Entity {
 				turns.add("a");
 				Main.console.print(x, y, " ");
 				x--;
+				break;
 				}
 			break;
 		case CharKey.d:
@@ -67,6 +70,7 @@ public class EntityPlayer extends Entity {
 				turns.add("d");
 				Main.console.print(x, y, " ");
 				x++;
+				break;
 				}
 			break;
 		case CharKey.f:
@@ -77,8 +81,8 @@ public class EntityPlayer extends Entity {
 			break;
 		}
 		}
-		
-	}
+	
+	
 	public void setplayerloc(){
 		yprev = y;
 		xprev = x;
