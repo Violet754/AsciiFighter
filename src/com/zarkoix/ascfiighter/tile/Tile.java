@@ -15,7 +15,7 @@ public class Tile {
 	}
 	private char vr; //visual repersentation
 	@Getter @Setter protected int meta; //meta data
-	@Getter @Setter protected boolean collision; //collision?
+	@Getter @Setter protected boolean collision = false; //collision?
 	
 	public String getVr(){
 		String retString = String.valueOf(vr);

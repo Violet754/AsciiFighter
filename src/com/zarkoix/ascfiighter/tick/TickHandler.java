@@ -1,7 +1,10 @@
 package com.zarkoix.ascfiighter.tick;
 
 import net.slashie.libjcsi.ConsoleSystemInterface;
+
 import com.zarkoix.ascfiighter.Main;
+import com.zarkoix.ascfiighter.tile.Move;
+import com.zarkoix.ascfiighter.tile.Step;
 
 public class TickHandler {
 	//replay array list
@@ -38,31 +41,8 @@ public class TickHandler {
 		Main.getPlayers()[0].setX(Main.getPlayers()[0].xprev);
 		Main.getPlayers()[0].setY(Main.getPlayers()[0].yprev);
 		while(Main.getPlayers()[0].turns.isEmpty() == false){
-			String direction = Main.getPlayers()[0].turns.get(inq);
-			switch(direction){
-				case "w":
-					Main.getPlayers()[0].setY(Main.getPlayers()[0].getY() - 1);
-					Main.getPlayers()[0].turns.remove(inq);
-					inq--;
-					break;
-				case "s":
-					Main.getPlayers()[0].setY(Main.getPlayers()[0].getY() + 1);
-					Main.getPlayers()[0].turns.remove(inq);
-					inq--;
-					break;
-				case "a":
-					Main.getPlayers()[0].setX(Main.getPlayers()[0].getX() - 1);
-					Main.getPlayers()[0].turns.remove(inq);
-					inq--;
-					break;
-				case "d":
-					Main.getPlayers()[0].setX(Main.getPlayers()[0].getX() + 1);
-					Main.getPlayers()[0].turns.remove(inq);
-					inq--;
-					break;
-				default: break;
-			
-			}
+			Move direction = Main.getPlayers()[0].turns.get(inq);
+			direction.run(Main.getPlayers()[0]);
 		}
 		Main.getPlayers()[0].turns.clear();
 		

@@ -15,7 +15,7 @@ public class Main{
 	@Getter protected static EntityPlayer[] players = new EntityPlayer[4];
 	public static ConsoleSystemInterface console = null;
 	@Getter protected static Level lev;
-	
+	public static Level level = lev;
 	
     public static void Mains() throws IOException{
     	console = new WSwingConsoleInterface("Ascii Fight", false);

@@ -10,6 +10,8 @@ import com.zarkoix.ascfiighter.Main;
 import com.zarkoix.ascfiighter.tick.LevelTick;
 import com.zarkoix.ascfiighter.tick.TickHandler;
 import com.zarkoix.ascfiighter.tile.Entity;
+import com.zarkoix.ascfiighter.tile.Move;
+import com.zarkoix.ascfiighter.tile.Step;
 import com.zarkoix.ascfiighter.tile.player.EntityPlayer;
 
 public class EntityPlayer extends Entity {
@@ -35,14 +37,14 @@ public class EntityPlayer extends Entity {
 	public int yprev ;
 	public int xprev ;
 	public char v = "@".charAt(0);
-	public ArrayList<String> turns = new ArrayList<String>();
+	public ArrayList<Move> turns = new ArrayList<Move>();
 	
 	public void controls(){
 		CharKey dir = Main.console.inkey();
 		switch(dir.code){
 		case CharKey.w:
 			if(turns.size() !=4){
-				turns.add("w");
+				turns.add(new Move(2));
 				Main.console.print(x, y, " ");
 				y--;
 				break;
@@ -50,7 +52,7 @@ public class EntityPlayer extends Entity {
 			break;
 		case CharKey.s:
 			if(turns.size() !=4){
-				turns.add("s");
+				turns.add(new Move(0));
 				Main.console.print(x, y, " ");
 				y++;
 				break;
@@ -58,7 +60,7 @@ public class EntityPlayer extends Entity {
 			break;
 		case CharKey.a:
 			if(turns.size() !=4){
-				turns.add("a");
+				turns.add(new Move(3));
 				Main.console.print(x, y, " ");
 				x--;
 				break;
@@ -66,7 +68,7 @@ public class EntityPlayer extends Entity {
 			break;
 		case CharKey.d:
 			if(turns.size() != 4){
-				turns.add("d");
+				turns.add(new Move(1));
 				Main.console.print(x, y, " ");
 				x++;
 				break;
