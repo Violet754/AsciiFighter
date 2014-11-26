@@ -1,9 +1,12 @@
 package com.zarkoix.ascfiighter;
 
 import java.io.IOException;
+
 import lombok.Getter;
+import lombok.Setter;
 import net.slashie.libjcsi.ConsoleSystemInterface;
 import net.slashie.libjcsi.wswing.WSwingConsoleInterface;
+
 import com.zarkoix.ascfiighter.levelHandler.Level;
 import com.zarkoix.ascfiighter.levelHandler.levelLoad;
 import com.zarkoix.ascfiighter.levelHandler.levelWrite;
@@ -14,8 +17,7 @@ public class Main{
 	//Player Init
 	@Getter protected static EntityPlayer[] players = new EntityPlayer[4];
 	public static ConsoleSystemInterface console = null;
-	@Getter protected static Level lev;
-	public static Level level = lev;
+	@Getter @Setter protected static Level lev;
 	
     public static void Mains() throws IOException{
     	console = new WSwingConsoleInterface("Ascii Fight", false);

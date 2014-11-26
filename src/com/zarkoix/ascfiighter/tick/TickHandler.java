@@ -43,6 +43,10 @@ public class TickHandler {
 		while(Main.getPlayers()[0].turns.isEmpty() == false){
 			Move direction = Main.getPlayers()[0].turns.get(inq);
 			direction.run(Main.getPlayers()[0]);
+			inq--;
+			if(inq == -1){
+				Main.getPlayers()[0].turns.clear();
+			}
 		}
 		Main.getPlayers()[0].turns.clear();
 		

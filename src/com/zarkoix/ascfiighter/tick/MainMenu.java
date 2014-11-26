@@ -35,6 +35,7 @@ public class MainMenu extends Thread{
 						}
 						
 				        levelWrite.levelDraw(Main.console, lev);
+				        Main.setLev(lev);
 						TickHandler.initTicks(1);
 						TickHandler.MainMenurun = false;
 						
