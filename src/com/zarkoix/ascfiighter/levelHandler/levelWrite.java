@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.slashie.libjcsi.ConsoleSystemInterface;
 
+import com.zarkoix.ascfiighter.Main;
 import com.zarkoix.ascfiighter.tile.Tile;
 import com.zarkoix.ascfiighter.tile.player.EntityPlayer;
 
@@ -21,6 +22,7 @@ public class levelWrite {
 	
 	public static Level levelForm(List<String> lines){
 		Level ret = new Level();
+		int playerNum = 0;
 		for(int y = 0; y < lines.size(); y++){
 			
 			
@@ -29,9 +31,7 @@ public class levelWrite {
 			
 			for(int x = 0; x < lineI.length; x++){
 				if(lineI[x] == "@".charAt(0)){
-					EntityPlayer.x = x;
-					EntityPlayer.y = y;
-					
+					Main.getPlayers()[playerNum] = new EntityPlayer('@' ,(short)0 ,true, (short)5, (short)0, (short)5, (short)5, (short)5, x, y);					
 				}else{
 				ret.setTile(x, y, new Tile(lineI[x]));
 				}

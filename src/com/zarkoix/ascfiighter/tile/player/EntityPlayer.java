@@ -20,6 +20,12 @@ public class EntityPlayer extends Entity {
 		xloc = x;
 		yloc = y;
 	}
+	public EntityPlayer() {
+		super();
+		x = 0;
+		y = 0;
+	}
+	
 	
 	@Getter @Setter private short mana;
 	@Getter @Setter private short mmana;

@@ -9,12 +9,13 @@ public class Tile {
 		meta = m;
 		collision = c;
 	}
+	public Tile(){}
 	public Tile(char lineI){
 		vr = lineI;
 	}
 	private char vr; //visual repersentation
-	@Getter @Setter private int meta; //meta data
-	@Getter @Setter private boolean collision; //collision?
+	@Getter @Setter protected int meta; //meta data
+	@Getter @Setter protected boolean collision; //collision?
 	
 	public String getVr(){
 		String retString = String.valueOf(vr);

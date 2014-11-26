@@ -1,5 +1,6 @@
 package com.zarkoix.ascfiighter.tick;
 
+import com.zarkoix.ascfiighter.Main;
 import com.zarkoix.ascfiighter.tick.TickHandler;
 
 public class LevelTick extends Thread{
@@ -7,7 +8,7 @@ public class LevelTick extends Thread{
 	public static boolean LocationStore = false;
 	public void run(){
 		//save player location at the start of level load
-		TickHandler.player1.setplayerloc();
+		Main.getPlayers()[0].setplayerloc();
 		while(TickHandler.lvtkrun){
 			//if a turn is currently ending then
 			if(TickHandler.turnactive == false){
@@ -15,7 +16,7 @@ public class LevelTick extends Thread{
 				TickHandler.turnactive = true;
 			//if location has not been stored this turn then store location	
 			}else if(LocationStore == false){
-					TickHandler.player1.setplayerloc();
+				Main.getPlayers()[0].setplayerloc();
 					LocationStore = true;
 				}
 				//if turn is currently active then

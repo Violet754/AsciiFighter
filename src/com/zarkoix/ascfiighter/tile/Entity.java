@@ -10,6 +10,10 @@ public class Entity extends Tile {
 		maxHp = mh;
 		type = t;
 	}
+	public Entity(){
+		super();
+	}
+	
 	@Getter @Setter private short hp;
 	@Getter @Setter private short type;
 	@Getter @Setter private short maxHp;
