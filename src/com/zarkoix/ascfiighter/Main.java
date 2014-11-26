@@ -24,8 +24,6 @@ public class Main{
     public static void main(String[] args) throws IOException {
         Mains();
         console.cls();
-        lev = levelWrite.levelForm(levelLoad.getLevel("LevelMain.txt"));
-        levelWrite.levelDraw(console, lev);
        //debug to test ticks and player
        TickHandler.initTicks(0);
         

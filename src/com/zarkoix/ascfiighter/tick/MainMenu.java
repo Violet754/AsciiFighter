@@ -33,6 +33,7 @@ public class MainMenu extends Thread{
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
+						
 				        levelWrite.levelDraw(Main.console, lev);
 						TickHandler.initTicks(1);
 						TickHandler.MainMenurun = false;
