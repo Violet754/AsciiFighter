@@ -34,7 +34,7 @@ public class MainMenu extends Thread{
 							e.printStackTrace();
 						}
 				        levelWrite.levelDraw(Main.console, lev);
-						TickHandler.initTicks(0);
+						TickHandler.initTicks(1);
 						TickHandler.MainMenurun = false;
 						
 					}

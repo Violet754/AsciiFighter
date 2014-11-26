@@ -31,7 +31,8 @@ public class levelWrite {
 			
 			for(int x = 0; x < lineI.length; x++){
 				if(lineI[x] == "@".charAt(0)){
-					Main.getPlayers()[playerNum] = new EntityPlayer('@' ,(short)0 ,true, (short)5, (short)0, (short)5, (short)5, (short)5, x, y);					
+					Main.getPlayers()[playerNum] = new EntityPlayer('@' ,(short)0 ,true, (short)5, (short)0, (short)5, (short)5, (short)5, x, y);
+					playerNum++;
 				}else{
 				ret.setTile(x, y, new Tile(lineI[x]));
 				}
