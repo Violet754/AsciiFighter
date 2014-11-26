@@ -20,16 +20,14 @@ public class TickHandler {
 	public static boolean turnactive = true;
 	//what char to start at in CharArray in Player1
 	private static int inq = 3;
-	//Player Init
-	public static EntityPlayer player1 = new EntityPlayer('@' ,(short)0 ,true, (short)5, (short)0, (short)5,(short)5,(short)5,10,10);
 	//called by main class to init testing of ticks
 	public static void initTicks(int initlevel){
 		switch(initlevel){
-		case 0:
+		case 1:
 			lvtkrun = true;
 			lvtk.start();
 			break;
-		case 1:
+		case 0:
 			MainMenurun = true;
 			MainMenuTick.start();
 			break;
@@ -40,37 +38,37 @@ public class TickHandler {
 	//Called at end of a turn in LevelTick
 	public static void EndTurn(){
 		LevelTick.LocationStore = false;
-		inq = EntityPlayer.turns.size() - 1;
+		inq = Main.player1.turns.size() - 1;
 		Main.console.print(EntityPlayer.x, EntityPlayer.y, " ");
-		EntityPlayer.x = EntityPlayer.xprev;
-		EntityPlayer.y = EntityPlayer.yprev;
-		while(EntityPlayer.turns.isEmpty() == false){
-			String direction = EntityPlayer.turns.get(inq);
+		Main.player1.x = Main.player1.xprev;
+		Main.player1.y = Main.player1.yprev;
+		while(Main.player1.turns.isEmpty() == false){
+			String direction = Main.player1.turns.get(inq);
 			switch(direction){
 				case "w":
-					EntityPlayer.y = EntityPlayer.y - (short)1;
-					EntityPlayer.turns.remove(inq);
+					Main.player1.y = Main.player1.y - (short)1;
+					Main.player1.turns.remove(inq);
 					inq--;
 					break;
 				case "s":
-					EntityPlayer.y = EntityPlayer.y + (short)1;
-					EntityPlayer.turns.remove(inq);
+					Main.player1.y = EntityPlayer.y + (short)1;
+					Main.player1.turns.remove(inq);
 					inq--;
 					break;
 				case "a":
-					EntityPlayer.x = EntityPlayer.x - (short)1;
-					EntityPlayer.turns.remove(inq);
+					Main.player1.x = EntityPlayer.x - (short)1;
+					Main.player1.turns.remove(inq);
 					inq--;
 					break;
 				case "d":
-					EntityPlayer.x = EntityPlayer.x + (short)1;
-					EntityPlayer.turns.remove(inq);
+					Main.player1.x = EntityPlayer.x + (short)1;
+					Main.player1.turns.remove(inq);
 					inq--;
 					break;
 			
 			}
 		}
-		EntityPlayer.turns.clear();
+		Main.player1.turns.clear();
 		
 	}
 	
