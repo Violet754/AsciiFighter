@@ -24,7 +24,7 @@ public class Move implements Step {
 				return true;
 			}
 			case 2: if(Main.getLev().getTile(player.getX(), player.getY() - 1).isCollision() != true){
-				player.setY(player.getY()- 1);
+				player.setY(player.getY() - 1);
 				player.turns.remove(this);
 				return true;
 			}
@@ -33,8 +33,7 @@ public class Move implements Step {
 				player.turns.remove(this);
 				return true;
 			}
-		}		
-		return false;
+		}
+	return false;
 	}
-
 }

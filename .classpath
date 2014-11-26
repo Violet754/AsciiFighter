@@ -6,5 +6,9 @@
 	<classpathentry kind="lib" path="libjcsi_resources.jar"/>
 	<classpathentry kind="lib" path="libjcsi.jar"/>
 	<classpathentry kind="lib" path="sLibcsi.jar"/>
+	<classpathentry kind="lib" path="/Users/Adam/git/AsciiFighter/libjcsi_resources.jar"/>
+	<classpathentry kind="lib" path="/Users/Adam/git/AsciiFighter/libjcsi.jar"/>
+	<classpathentry kind="lib" path="/Users/Adam/git/AsciiFighter/lombok.jar"/>
+	<classpathentry kind="lib" path="/Users/Adam/git/AsciiFighter/sLibcsi.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
