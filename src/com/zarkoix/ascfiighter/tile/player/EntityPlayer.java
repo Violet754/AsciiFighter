@@ -15,10 +15,10 @@ public class EntityPlayer extends Entity {
 
 	public EntityPlayer(char v, int m, boolean g, short h, short t, short mh,short man,short mman,int xloc , int yloc) {
 		super(v, m, g, h, t, mh);
-		man = mana;
-		mman = mmana;
-		xloc = x;
-		yloc = y;
+		mana = man;
+		mmana = mman;
+		x = xloc;
+		y = yloc;
 	}
 	public EntityPlayer() {
 		super();
