@@ -22,8 +22,8 @@ public class EntityPlayer extends Entity {
 	}
 	public EntityPlayer() {
 		super();
-		x = 0;
-		y = 0;
+		x = 10;
+		y = 10;
 	}
 	
 	
