@@ -8,7 +8,6 @@ import lombok.Setter;
 
 import com.zarkoix.ascfiighter.Main;
 import com.zarkoix.ascfiighter.tick.LevelTick;
-import com.zarkoix.ascfiighter.tick.LocationStore;
 import com.zarkoix.ascfiighter.tick.TickHandler;
 import com.zarkoix.ascfiighter.tile.Entity;
 import com.zarkoix.ascfiighter.tile.player.EntityPlayer;
