@@ -1,5 +1,7 @@
 package com.zarkoix.ascfiighter.tile;
 
-public class Step{
+import com.zarkoix.ascfiighter.tile.player.EntityPlayer;
 
+public interface Step{	
+	public boolean run(EntityPlayer player);
 }

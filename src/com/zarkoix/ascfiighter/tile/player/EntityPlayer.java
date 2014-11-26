@@ -23,14 +23,14 @@ public class EntityPlayer extends Entity {
 	
 	@Getter @Setter private short mana;
 	@Getter @Setter private short mmana;
-	@Getter @Setter public static int x ;
-	@Getter @Setter public static int y ;
-	public static int yprev ;
-	public static int xprev ;
-	public static char v = "@".charAt(0);
-	public static ArrayList<String> turns = new ArrayList<String>();
+	@Getter @Setter protected int x ;
+	@Getter @Setter protected int y ;
+	public int yprev ;
+	public int xprev ;
+	public char v = "@".charAt(0);
+	public ArrayList<String> turns = new ArrayList<String>();
 	
-	public static void controls(){
+	public void controls(){
 		
 		CharKey dir = Main.console.inkey();
 		if(TickHandler.turnactive){
