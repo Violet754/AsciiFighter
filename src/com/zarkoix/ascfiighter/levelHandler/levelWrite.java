@@ -7,7 +7,7 @@ import net.slashie.libjcsi.ConsoleSystemInterface;
 
 import com.zarkoix.ascfiighter.Main;
 import com.zarkoix.ascfiighter.tile.Tile;
-import com.zarkoix.ascfiighter.tile.player.EntityPlayer;
+import com.zarkoix.ascfiighter.tile.entity.player.EntityPlayer;
 
 public class levelWrite {
 	public static void levelDraw(ConsoleSystemInterface t, Level l){

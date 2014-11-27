@@ -1,7 +1,7 @@
 package com.zarkoix.ascfiighter.tile;
 
 import com.zarkoix.ascfiighter.Main;
-import com.zarkoix.ascfiighter.tile.player.EntityPlayer;
+import com.zarkoix.ascfiighter.tile.entity.player.EntityPlayer;
 
 public class Move implements Step {
 	public Move(int a){

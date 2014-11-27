@@ -1,4 +1,6 @@
-package com.zarkoix.ascfiighter.tile;
+package com.zarkoix.ascfiighter.tile.entity;
+
+import com.zarkoix.ascfiighter.tile.Tile;
 
 import net.slashie.libjcsi.CSIColor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.zarkoix.ascfiighter.tile.player;
+package com.zarkoix.ascfiighter.tile.entity.player;
 
 import java.util.ArrayList;
 
@@ -10,10 +10,10 @@ import lombok.Setter;
 import com.zarkoix.ascfiighter.Main;
 import com.zarkoix.ascfiighter.tick.LevelTick;
 import com.zarkoix.ascfiighter.tick.TickHandler;
-import com.zarkoix.ascfiighter.tile.Entity;
 import com.zarkoix.ascfiighter.tile.Move;
 import com.zarkoix.ascfiighter.tile.Step;
-import com.zarkoix.ascfiighter.tile.player.EntityPlayer;
+import com.zarkoix.ascfiighter.tile.entity.Entity;
+import com.zarkoix.ascfiighter.tile.entity.player.EntityPlayer;
 
 public class EntityPlayer extends Entity {
 
