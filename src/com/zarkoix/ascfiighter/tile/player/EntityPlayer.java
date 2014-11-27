@@ -43,7 +43,7 @@ public class EntityPlayer extends Entity {
 		CharKey dir = Main.console.inkey();
 		switch(dir.code){
 		case CharKey.w:
-			if(turns.size() !=4){
+			if(turns.size() !=4 && Main.getLev().getTile(x, y - 1).isCollision() != true){
 				turns.add(new Move(2));
 				Main.console.print(x, y, " ");
 				y--;
@@ -51,7 +51,7 @@ public class EntityPlayer extends Entity {
 			}
 			break;
 		case CharKey.s:
-			if(turns.size() !=4){
+			if(turns.size() !=4 && Main.getLev().getTile(x, y + 1).isCollision() != true){
 				turns.add(new Move(0));
 				Main.console.print(x, y, " ");
 				y++;
@@ -59,7 +59,7 @@ public class EntityPlayer extends Entity {
 				}
 			break;
 		case CharKey.a:
-			if(turns.size() !=4){
+			if(turns.size() !=4 && Main.getLev().getTile(x - 1, y).isCollision() != true){
 				turns.add(new Move(3));
 				Main.console.print(x, y, " ");
 				x--;
@@ -67,7 +67,7 @@ public class EntityPlayer extends Entity {
 				}
 			break;
 		case CharKey.d:
-			if(turns.size() != 4){
+			if(turns.size() != 4 && Main.getLev().getTile(x + 1, y).isCollision() != true){
 				turns.add(new Move(1));
 				Main.console.print(x, y, " ");
 				x++;
