@@ -16,7 +16,7 @@ public class Move implements Step {
 		switch(direction){
 		//north
 			case NORTH: if(Main.getLev().getTile(player.getX(), player.getY() - 1).isCollision() != true){
-				player.setY(player.getY()+ 1);
+				player.setY(player.getY()- 1);
 				player.turns.remove(this);
 				return true;
 			}
@@ -28,7 +28,7 @@ public class Move implements Step {
 			}
 		//south
 			case SOUTH: if(Main.getLev().getTile(player.getX(), player.getY() + 1).isCollision() != true){
-				player.setY(player.getY() - 1);
+				player.setY(player.getY() + 1);
 				player.turns.remove(this);
 				return true;
 			}
