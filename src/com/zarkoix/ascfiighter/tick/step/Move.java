@@ -22,7 +22,7 @@ public class Move implements Step {
 			}
 		//east
 			case EAST: if(Main.getLev().getTile(player.getX() + 1, player.getY()).isCollision() != true){
-				player.setY(player.getX()+ 1);
+				player.setX(player.getX()+ 1);
 				player.turns.remove(this);
 				return true;
 			}
@@ -34,7 +34,7 @@ public class Move implements Step {
 			}
 		//west
 			case WEST: if(Main.getLev().getTile(player.getX() - 1, player.getY()).isCollision() != true){
-				player.setY(player.getY() - 1);
+				player.setX(player.getX() - 1);
 				player.turns.remove(this);
 				return true;
 			}
