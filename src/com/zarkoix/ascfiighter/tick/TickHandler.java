@@ -23,12 +23,18 @@ public class TickHandler {
 		switch(initlevel){
 		case 1:
 			lvtkrun = true;
-			lvtk.start();
+			lvtk.run();
 			break;
 		case 0:
+			if(MainMenurun == false && !lvtk.isAlive()){
 			MainMenurun = true;
-			MainMenuTick.start();
-			break;
+			MainMenuTick.run();
+			}else{
+				Main.console.cls();
+				MainMenurun = true;
+				MainMenuTick.run();
+				Main.setPlayers(null);
+			}
 		}
 		
 		

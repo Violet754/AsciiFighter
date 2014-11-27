@@ -85,6 +85,10 @@ public class EntityPlayer extends Entity {
 				break;
 			}
 			break;
+		case CharKey.ESC:
+			TickHandler.lvtkrun = false;
+			
+			TickHandler.initTicks(0);
 		}
 		}
 	public void print(int x,int y){
