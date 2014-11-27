@@ -4,11 +4,12 @@ import java.util.ArrayList;
 
 import net.slashie.libjcsi.CSIColor;
 import net.slashie.libjcsi.CharKey;
+import net.slashie.libjcsi.ConsoleSystemInterface;
 import lombok.Getter;
 import lombok.Setter;
 
+import com.zarkoix.ascfiighter.levelHandler.Directions;
 import com.zarkoix.ascfiighter.Main;
-import com.zarkoix.ascfiighter.tick.LevelTick;
 import com.zarkoix.ascfiighter.tick.TickHandler;
 import com.zarkoix.ascfiighter.tick.step.Move;
 import com.zarkoix.ascfiighter.tick.step.Step;
@@ -40,7 +41,7 @@ public class EntityPlayer extends Entity {
 		switch(dir.code){
 		case CharKey.w:
 			if(turns.size() !=4 && Main.getLev().getTile(x, y - 1).isCollision() != true){
-				turns.add(new Move(0));
+				turns.add(new Move(Directions.NORTH));
 				Main.console.print(x, y, " ");
 				y--;
 				break;
@@ -48,7 +49,7 @@ public class EntityPlayer extends Entity {
 			break;
 		case CharKey.s:
 			if(turns.size() !=4 && Main.getLev().getTile(x, y + 1).isCollision() != true){
-				turns.add(new Move(2));
+				turns.add(new Move(Directions.SOUTH));
 				Main.console.print(x, y, " ");
 				y++;
 				break;
@@ -56,7 +57,7 @@ public class EntityPlayer extends Entity {
 			break;
 		case CharKey.a:
 			if(turns.size() !=4 && Main.getLev().getTile(x - 1, y).isCollision() != true){
-				turns.add(new Move(3));
+				turns.add(new Move(Directions.WEST));
 				Main.console.print(x, y, " ");
 				x--;
 				break;
@@ -64,7 +65,7 @@ public class EntityPlayer extends Entity {
 			break;
 		case CharKey.d:
 			if(turns.size() != 4 && Main.getLev().getTile(x + 1, y).isCollision() != true){
-				turns.add(new Move(1));
+				turns.add(new Move(Directions.EAST));
 				Main.console.print(x, y, " ");
 				x++;
 				break;
@@ -87,7 +88,7 @@ public class EntityPlayer extends Entity {
 		}
 		}
 	public void print(int x,int y){
-		Main.console.print(x, y, this.getVr(),Main.console.WHITE);
+		Main.console.print(x, y, this.getVr(),ConsoleSystemInterface.WHITE);
 	}
 	
 	public void setplayerloc(){
