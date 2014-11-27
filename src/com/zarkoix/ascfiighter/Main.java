@@ -8,10 +8,8 @@ import net.slashie.libjcsi.ConsoleSystemInterface;
 import net.slashie.libjcsi.wswing.WSwingConsoleInterface;
 
 import com.zarkoix.ascfiighter.levelHandler.Level;
-import com.zarkoix.ascfiighter.levelHandler.levelLoad;
-import com.zarkoix.ascfiighter.levelHandler.levelWrite;
 import com.zarkoix.ascfiighter.tick.TickHandler;
-import com.zarkoix.ascfiighter.tile.player.EntityPlayer;
+import com.zarkoix.ascfiighter.tile.entity.player.EntityPlayer;
 
 public class Main{
 	//Player Init

@@ -3,7 +3,6 @@ package com.zarkoix.ascfiighter.tick;
 import net.slashie.libjcsi.ConsoleSystemInterface;
 
 import com.zarkoix.ascfiighter.Main;
-import com.zarkoix.ascfiighter.tick.step.Move;
 import com.zarkoix.ascfiighter.tick.step.Step;
 
 public class TickHandler {
