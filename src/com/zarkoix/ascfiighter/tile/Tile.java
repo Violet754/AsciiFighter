@@ -1,20 +1,20 @@
 package com.zarkoix.ascfiighter.tile;
 
+import net.slashie.libjcsi.CSIColor;
 import lombok.Getter;
 import lombok.Setter;
 
 public class Tile {
-	public Tile(char v, int m, boolean c){
+	public Tile(char v, CSIColor m, boolean c){
 		vr = v;
-		meta = m;
+		Color = m;
 		collision = c;
 	}
-	public Tile(){}
 	public Tile(char lineI){
 		vr = lineI;
 	}
 	private char vr; //visual repersentation
-	@Getter @Setter protected int meta; //meta data
+	@Getter @Setter protected CSIColor Color; //Color data
 	@Getter @Setter protected boolean collision = false; //collision?
 	
 	public String getVr(){

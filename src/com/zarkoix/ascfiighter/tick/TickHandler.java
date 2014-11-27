@@ -41,7 +41,7 @@ public class TickHandler {
 		Main.getPlayers()[0].setX(Main.getPlayers()[0].xprev);
 		Main.getPlayers()[0].setY(Main.getPlayers()[0].yprev);
 		while(Main.getPlayers()[0].turns.isEmpty() == false){
-			Move direction = Main.getPlayers()[0].turns.get(inq);
+			Step direction = Main.getPlayers()[0].turns.get(inq);
 			direction.run(Main.getPlayers()[0]);
 			inq--;
 			if(inq == -1){

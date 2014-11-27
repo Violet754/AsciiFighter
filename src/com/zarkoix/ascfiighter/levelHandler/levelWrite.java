@@ -2,6 +2,7 @@ package com.zarkoix.ascfiighter.levelHandler;
 
 import java.util.List;
 
+import net.slashie.libjcsi.CSIColor;
 import net.slashie.libjcsi.ConsoleSystemInterface;
 
 import com.zarkoix.ascfiighter.Main;
@@ -31,10 +32,10 @@ public class levelWrite {
 			
 			for(int x = 0; x < lineI.length; x++){
 				if(lineI[x] == "@".charAt(0)){
-					Main.getPlayers()[playerNum] = new EntityPlayer('@' ,(short)0 ,false, (short)5, (short)0, (short)5, (short)5, (short)5, x, y);
+					Main.getPlayers()[playerNum] = new EntityPlayer('@' ,CSIColor.WHITE,false, (short)5, (short)0, (short)5, (short)5, (short)5, x, y);
 					playerNum++;
 				}if(lineI[x] == "#".charAt(0)){
-					ret.setTile(x, y, new Tile(lineI[x], 0,true));
+					ret.setTile(x, y, new Tile(lineI[x], CSIColor.WHITE,true));
 				}else{
 				ret.setTile(x, y, new Tile(lineI[x]));
 				}

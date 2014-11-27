@@ -2,6 +2,7 @@ package com.zarkoix.ascfiighter.tile.player;
 
 import java.util.ArrayList;
 
+import net.slashie.libjcsi.CSIColor;
 import net.slashie.libjcsi.CharKey;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,17 +17,12 @@ import com.zarkoix.ascfiighter.tile.player.EntityPlayer;
 
 public class EntityPlayer extends Entity {
 
-	public EntityPlayer(char v, int m, boolean g, short h, short t, short mh,short man,short mman,int xloc , int yloc) {
+	public EntityPlayer(char v, CSIColor m, boolean g, short h, short t, short mh,short man,short mman,int xloc , int yloc) {
 		super(v, m, g, h, t, mh);
 		mana = man;
 		mmana = mman;
 		x = xloc;
 		y = yloc;
-	}
-	public EntityPlayer() {
-		super();
-		x = 10;
-		y = 10;
 	}
 	
 	
@@ -37,7 +33,7 @@ public class EntityPlayer extends Entity {
 	public int yprev ;
 	public int xprev ;
 	public char v = "@".charAt(0);
-	public ArrayList<Move> turns = new ArrayList<Move>();
+	public ArrayList<Step> turns = new ArrayList<Step>();
 	
 	public void controls(){
 		CharKey dir = Main.console.inkey();
@@ -80,9 +76,18 @@ public class EntityPlayer extends Entity {
 		case CharKey.SPACE:
 			TickHandler.turnactive = false;
 			break;
+		//WIP
+		case CharKey.q:
+			if(!turns.isEmpty()){
+				Step remove = turns.get(turns.size() - 1);
+				break;
+			}
+			break;
 		}
 		}
-	
+	public void print(int x,int y){
+		Main.console.print(x, y, this.getVr(),Main.console.WHITE);
+	}
 	
 	public void setplayerloc(){
 		yprev = y;
