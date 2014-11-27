@@ -10,8 +10,8 @@ import lombok.Setter;
 import com.zarkoix.ascfiighter.Main;
 import com.zarkoix.ascfiighter.tick.LevelTick;
 import com.zarkoix.ascfiighter.tick.TickHandler;
-import com.zarkoix.ascfiighter.tile.Move;
-import com.zarkoix.ascfiighter.tile.Step;
+import com.zarkoix.ascfiighter.tick.step.Move;
+import com.zarkoix.ascfiighter.tick.step.Step;
 import com.zarkoix.ascfiighter.tile.entity.Entity;
 import com.zarkoix.ascfiighter.tile.entity.player.EntityPlayer;
 
