@@ -80,6 +80,7 @@ public class EntityPlayer extends Entity {
 		case CharKey.q:
 			if(!turns.isEmpty()){
 				Step remove = turns.get(turns.size() - 1);
+				turns.remove(remove);
 				break;
 			}
 			break;
