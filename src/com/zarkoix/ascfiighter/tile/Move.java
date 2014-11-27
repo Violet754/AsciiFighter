@@ -13,21 +13,25 @@ public class Move implements Step {
 	@Override
 	public boolean run(EntityPlayer player) {
 		switch(direction){
-			case 0: if(Main.getLev().getTile(player.getX(), player.getY() + 1).isCollision() != true){
+		//north
+			case 0: if(Main.getLev().getTile(player.getX(), player.getY() - 1).isCollision() != true){
 				player.setY(player.getY()+ 1);
 				player.turns.remove(this);
 				return true;
 			}
+		//east
 			case 1: if(Main.getLev().getTile(player.getX() + 1, player.getY()).isCollision() != true){
 				player.setY(player.getX()+ 1);
 				player.turns.remove(this);
 				return true;
 			}
-			case 2: if(Main.getLev().getTile(player.getX(), player.getY() - 1).isCollision() != true){
+		//south
+			case 2: if(Main.getLev().getTile(player.getX(), player.getY() + 1).isCollision() != true){
 				player.setY(player.getY() - 1);
 				player.turns.remove(this);
 				return true;
 			}
+		//west
 			case 3: if(Main.getLev().getTile(player.getX() - 1, player.getY()).isCollision() != true){
 				player.setY(player.getY() - 1);
 				player.turns.remove(this);
