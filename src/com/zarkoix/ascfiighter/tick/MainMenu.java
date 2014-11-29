@@ -13,12 +13,12 @@ import com.zarkoix.ascfiighter.levelHandler.levelWrite;
 public class MainMenu extends Thread{
 	public void run(){
 		int selection = 0;
-		if(TickHandler.MainMenurun){
+		if(TickHandler.MainMenurun && Thread.currentThread().isInterrupted() == false){
 			Main.console.print(3, 3, "AsciiFight");
 			Main.console.print(3, 4, "Made By Zarkoix and Coldrock7");
 			Main.console.print(3,6,  "StartGame!",Main.console.WHITE);
 			
-			while(TickHandler.MainMenurun){
+			while(TickHandler.MainMenurun && Thread.currentThread().isInterrupted() == false){
 				switch(selection){
 				case 0:
 					Main.console.print(3,6,  "StartGame!",Main.console.GREEN);
@@ -38,6 +38,8 @@ public class MainMenu extends Thread{
 				        Main.setLev(lev);
 						TickHandler.initTicks(1);
 						TickHandler.MainMenurun = false;
+						Thread.currentThread().interrupt();
+						
 						
 					}
 					break;

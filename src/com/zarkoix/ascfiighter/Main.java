@@ -13,7 +13,7 @@ import com.zarkoix.ascfiighter.tile.entity.player.EntityPlayer;
 
 public class Main{
 	//Player Init
-	@Getter protected static EntityPlayer[] players = new EntityPlayer[4];
+	@Getter @Setter protected static EntityPlayer[] players = new EntityPlayer[4];
 	public static ConsoleSystemInterface console = null;
 	@Getter @Setter protected static Level lev;
 	

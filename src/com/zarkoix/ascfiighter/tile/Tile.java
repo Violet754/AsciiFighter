@@ -13,7 +13,7 @@ public class Tile {
 	public Tile(char lineI){
 		vr = lineI;
 	}
-	private char vr; //visual repersentation
+	private char vr; //visual representation
 	@Getter @Setter protected CSIColor Color; //Color data
 	@Getter @Setter protected boolean collision = false; //collision?
 	
